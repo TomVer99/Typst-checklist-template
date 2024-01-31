@@ -75,6 +75,10 @@
   ]]]
 }
 
+#let page_number() = locate(loc => {
+  loc.page()
+})
+
 #let checklist(
   title: none,
 
@@ -84,7 +88,25 @@
 
   body
 ) = {
-  set page("a4", margin: 0.4in,)
+  set page("a4", margin: 0.4in,
+  footer: [
+    #place(left, dy: -10pt,
+      text(size: 8pt, fill: rgb("000000"))[
+        Made with Typst.\
+        Template by TomVer99 on GitHub.
+      ]
+    )
+    #place(center, dy: -10pt,
+      text(size: 8pt, fill: rgb("000000"))[
+        #page_number()
+      ]
+    )
+    #place(right, dy: -10pt,
+      text(size: 8pt, fill: rgb("000000"))[
+        #title
+      ]
+    )
+  ])
   set text(size: large_text_size, font: "Open Sans")
 
   style_state.update(style)
