@@ -7,8 +7,10 @@
 
 This typst checklist template is a simple checklist template for typst. It has multiple styles that require no changes to the document to switch between.
 
-<img src="./img/BN Islander-0.png" alt="Showcase" width="45%">
-<img src="./img/BN Islander-1.png" alt="Showcase" width="45%">
+<p>
+  <img src="./img/BN Islander-0.png" alt="Showcase" width="45%">
+  <img src="./img/BN Islander-1.png" alt="Showcase" width="45%">
+</p>
 
 Left: Style 0, Right: Style 1
 
