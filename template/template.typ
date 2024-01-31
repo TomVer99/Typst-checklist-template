@@ -90,6 +90,7 @@
 ) = {
   set page("a4", margin: 0.4in,
   footer: [
+    #line(start: (0pt, -15pt), length: 100%)
     #place(left, dy: -10pt,
       text(size: 8pt, fill: rgb("000000"))[
         Made with Typst.\
