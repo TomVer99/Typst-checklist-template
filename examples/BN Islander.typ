@@ -7,7 +7,7 @@
   disclaimer: "This checklist is for hobby purposes only and should not be used in real life. \nThe name \"SIMMERS\" is a made up name and does not represent any real organization.",
   distribution-statement: "For SIMMERS use only",
   rev: "Rev 1",
-  doc: "BN Islander",
+  doc: "CL001",
   // style: 1,
 )
 

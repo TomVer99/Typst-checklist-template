@@ -13,6 +13,7 @@
   box(width: 100%, stroke: 1pt, outset: 4pt, fill: fill_clr)[
     #v(5pt)
     #align(center)[#text(size: 20pt, upper(strong(title)))]
+    #text(size: 0pt)[= #title]
     #v(5pt)
   ]
   columns(2)[
@@ -29,6 +30,7 @@
     box(width: 100%, stroke: 1pt, outset: 4pt, fill: fill_clr)[
       #v(5pt)
       #align(center)[#upper(strong(title))]
+      #text(size: 0pt)[== #title]
       #v(5pt)
     ]
     linebreak()
@@ -108,7 +110,7 @@
       [#disclaimer],
       [#distribution-statement],
       [#rev
-      #if rev != none and doc != none {[-]}
+      #if rev != none and doc != none {[#linebreak()]}
       #doc],
     )
   ])
@@ -125,7 +127,8 @@
     #line(start: (0pt, -15pt), length: 100%)
     #place(left, dy: -10pt,
       text(size: 8pt, fill: rgb("000000"))[
-        #datetime.today().display()
+        #datetime.today().display()#linebreak()
+        #rev
       ]
     )
     #place(center, dy: -10pt,
@@ -136,26 +139,27 @@
     #place(right, dy: -10pt,
       text(size: 8pt, fill: rgb("000000"))[
         #title#linebreak()
-        REV NR - DOC NR
+        #doc
       ]
     )
   ])
 
-  if title != none {
-    box(width: 100%, stroke: 1pt, outset: 4pt, fill: rgb("FFFFFF"))[
-      #v(5pt)
-      #align(center)[#text(size: 20pt, upper(strong(title)))]
-      #v(5pt)
-    ]
+  show outline.entry.where(
+    level: 1
+  ): it => {
+    v(12pt, weak: true)
+    strong(it)
   }
 
-  if disclaimer != none {
-    box(width: 100%, stroke: 1pt, outset: 4pt, fill: rgb("FF1100").lighten(40%))[
-      #v(5pt)
-      #align(center)[#text(size: 20pt, upper(strong(disclaimer)))]
-      #v(5pt)
-    ]
+  show outline.entry.where(
+    level: 2
+  ): it => {
+    h(2em)
+    it
   }
+
+  outline(title: "Table of Contents")
+  pagebreak()
 
   body
 
