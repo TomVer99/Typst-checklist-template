@@ -80,15 +80,47 @@
 })
 
 #let checklist(
+  organization-name: none,
+  cover-page-image: none,
   title: none,
-
   disclaimer: none,
+  distribution-statement: none,
+  rev: none,
+  doc: none,
 
   style: 0,
 
   body
 ) = {
   set page("a4", margin: 0.4in,
+  background: [
+    #grid(
+      columns: (90%),
+      rows: (1fr, 2fr, 1fr, 1fr, 1fr, 1fr),
+      gutter: 0.1in,
+      [#text(size: 2em)[#organization-name]],
+      [
+        #if cover-page-image != none {
+          image(cover-page-image, width: 6in, height: 3in)
+        }
+      ],
+      [#text(size: 2em)[#title]],
+      [#disclaimer],
+      [#distribution-statement],
+      [#rev
+      #if rev != none and doc != none {[-]}
+      #doc],
+    )
+  ])
+  set text(size: large_text_size, font: "Open Sans")
+
+  style_state.update(style)
+
+  box[]
+  pagebreak()
+
+  set page("a4",
+  background: [],
   footer: [
     #line(start: (0pt, -15pt), length: 100%)
     #place(left, dy: -10pt,
@@ -103,13 +135,11 @@
     )
     #place(right, dy: -10pt,
       text(size: 8pt, fill: rgb("000000"))[
-        #title
+        #title#linebreak()
+        REV NR - DOC NR
       ]
     )
   ])
-  set text(size: large_text_size, font: "Open Sans")
-
-  style_state.update(style)
 
   if title != none {
     box(width: 100%, stroke: 1pt, outset: 4pt, fill: rgb("FFFFFF"))[

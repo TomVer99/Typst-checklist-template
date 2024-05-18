@@ -1,8 +1,13 @@
 #import "../template/template.typ": *
 
 #show: checklist.with(
+  organization-name: "SIMMERS",
+  cover-page-image: "../examples/Britten-Norman_BN-2A-26_Islander,_Winair_-_Windward_Islands_Airways_JP5823246.jpg",
   title: "BN Islander Checklist",
-  disclaimer: "This checklist is for hobby purposes only and should not be used in real life.",
+  disclaimer: "This checklist is for hobby purposes only and should not be used in real life. \nThe name \"SIMMERS\" is a made up name and does not represent any real organization.",
+  distribution-statement: "For SIMMERS use only",
+  rev: "Rev 1",
+  doc: "BN Islander",
   // style: 1,
 )
 
