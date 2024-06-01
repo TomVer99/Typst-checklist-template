@@ -5,6 +5,47 @@
 
 #let style_state = state("style", "0")
 
+#let emer-page(black-and-white: false, body) = {
+  let size = 0.33in
+  let color = if black-and-white { rgb("FFFFFF") } else { abnormals }
+  let padding = if black-and-white { 1pt } else { 0pt }
+  set page("a4", margin: 0.4in,
+  background: [
+    #align(left + top)[
+      #block(width: size, height: 100%, fill: black)[
+      #for i in range(18) {
+        polygon(
+          (0pt, 0pt),
+          (size + padding, -size + padding),
+          (size + padding, 0pt),
+          (0pt, size + padding),
+          fill: color
+        )
+        v(0.1in)
+      }]
+    ]
+    #align(right + bottom)[
+      #block(width: size, height: 100%, fill: black)[
+      #for i in range(18) {
+        polygon(
+          (0pt, -size + padding),
+          (size + padding, 0pt),
+          (size + padding, size + padding),
+          (0pt, 0pt),
+          fill: color
+        )
+        v(0.1in)
+      }]
+    ]
+  ],
+  )
+
+  body
+
+  set page("a4", margin: 0.4in,
+  background: none)
+}
+
 #let topic(
   title,
   fill_clr: rgb("FFFFFF"),
@@ -106,7 +147,7 @@
         #title
       ]
     )
-  ])
+  ],)
   set text(size: large_text_size, font: "Open Sans")
 
   style_state.update(style)
