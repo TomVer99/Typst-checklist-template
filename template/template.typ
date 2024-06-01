@@ -16,7 +16,7 @@
       #for i in range(18) {
         polygon(
           (0pt, 0pt),
-          (size + padding, -size + padding),
+          (size + padding, -(size + padding)),
           (size + padding, 0pt),
           (0pt, size + padding),
           fill: color
@@ -28,7 +28,7 @@
       #block(width: size, height: 100%, fill: black)[
       #for i in range(18) {
         polygon(
-          (0pt, -size + padding),
+          (0pt, -(size + padding)),
           (size + padding, 0pt),
           (size + padding, size + padding),
           (0pt, 0pt),
