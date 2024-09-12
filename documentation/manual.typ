@@ -14,10 +14,6 @@
   ],
 )
 
-
-#let fontys-blue-2 = rgb("2F5496")
-#let code-name-color = fontys-blue-2.lighten(35%)
-
 #show: codly-init.with()
 #codly(
   languages: (
