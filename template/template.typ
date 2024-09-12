@@ -135,7 +135,6 @@
 #let page_number() = (
   context {
     counter(page).display()
-    // loc.page()
   }
 )
 
