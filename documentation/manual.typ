@@ -14,27 +14,23 @@
   ],
 )
 
-
-#let fontys-blue-2 = rgb("2F5496")
-#let code-name-color = fontys-blue-2.lighten(35%)
-
 #show: codly-init.with()
 #codly(
   languages: (
-    rust: (name: "Rust", color: code-name-color),
-    rs: (name: "Rust", color: code-name-color),
-    cmake: (name: "CMake", color: code-name-color),
-    cpp: (name: "C++", color: code-name-color),
-    c: (name: "C", color: code-name-color),
-    py: (name: "Python", color: code-name-color),
-    java: (name: "Java", color: code-name-color),
-    js: (name: "JavaScript", color: code-name-color),
-    sh: (name: "Shell", color: code-name-color),
-    bash: (name: "Bash", color: code-name-color),
-    json: (name: "JSON", color: code-name-color),
-    xml: (name: "XML", color: code-name-color),
-    yaml: (name: "YAML", color: code-name-color),
-    typst: (name: "Typst", color: code-name-color),
+    rust: (name: "Rust"),
+    rs: (name: "Rust"),
+    cmake: (name: "CMake"),
+    cpp: (name: "C++"),
+    c: (name: "C"),
+    py: (name: "Python"),
+    java: (name: "Java"),
+    js: (name: "JavaScript"),
+    sh: (name: "Shell"),
+    bash: (name: "Bash"),
+    json: (name: "JSON"),
+    xml: (name: "XML"),
+    yaml: (name: "YAML"),
+    typst: (name: "Typst"),
   ),
   number-format: none,
   display-icon: false,
@@ -115,7 +111,7 @@ Here is an example of a simple document:
 #command(
   "topic",
   arg[title],
-  arg[fill_clr],
+  arg[fill-clr],
   barg[body],
 )[
   #argument("title", types: "string")[
@@ -135,7 +131,7 @@ Here is an example of a simple document:
 #command(
   "section",
   arg[title],
-  arg[fill_clr],
+  arg[fill-clr],
   barg[body],
 )[
   #argument("title", types: "string")[
@@ -154,7 +150,7 @@ Here is an example of a simple document:
 #pagebreak()
 <topic>
 #command(
-  "small_caution",
+  "small-caution",
   barg[caution],
 )[
   #argument("caution", types: "string")[
