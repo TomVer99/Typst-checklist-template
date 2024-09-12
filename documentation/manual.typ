@@ -115,7 +115,7 @@ Here is an example of a simple document:
 #command(
   "topic",
   arg[title],
-  arg[fill_clr],
+  arg[fill-clr],
   barg[body],
 )[
   #argument("title", types: "string")[
@@ -135,7 +135,7 @@ Here is an example of a simple document:
 #command(
   "section",
   arg[title],
-  arg[fill_clr],
+  arg[fill-clr],
   barg[body],
 )[
   #argument("title", types: "string")[
@@ -154,7 +154,7 @@ Here is an example of a simple document:
 #pagebreak()
 <topic>
 #command(
-  "small_caution",
+  "small-caution",
   barg[caution],
 )[
   #argument("caution", types: "string")[
