@@ -83,3 +83,28 @@
     #step("Battery", "Off")
   ]
 ]
+
+#emer-page(black-and-white: true)[
+  #topic("Emergency Procedures")[
+    #section("Fire")[
+      #step("Fire Extinguisher", "Activate")
+    ]
+  ]]
+
+#topic("A Normal topic")[
+  #section("A Normal section")[
+    #step("Parking Brake", "Set")
+    #step("Avionics Master", "Off")
+    #step("External Lights", "Beacon & NAV")
+    #step("Heating", "Off")
+    #step("Right Engine Mixture", "Off")
+    #step("Left Engine Mixture", "Off")
+    #step("Prop", "Off")
+    #step("Throttle", "Off")
+    #step("MAGS", "Off")
+    #step("Fuel Selectors", "Off")
+    #step("Beacon & NAV", "Off")
+    #step("Generators", "Off")
+    #step("Battery", "Off")
+  ]
+]
