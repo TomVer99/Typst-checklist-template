@@ -85,11 +85,11 @@
 ]
 
 #emer-page(black-and-white: true)[
-#topic("Emergency Procedures")[
-  #section("Fire")[
-    #step("Fire Extinguisher", "Activate")
-  ]
-]]
+  #topic("Emergency Procedures")[
+    #section("Fire")[
+      #step("Fire Extinguisher", "Activate")
+    ]
+  ]]
 
 #topic("A Normal topic")[
   #section("A Normal section")[
