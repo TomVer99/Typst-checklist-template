@@ -101,13 +101,21 @@
   }
 )
 
-#let step(a, b) = {
+#let step(a, b, bold: false) = {
   if ((a != none and a != "") or (b != none and b != "")) {
-    a
+    if bold {
+      strong(a)
+    } else {
+      a
+    }
     " "
     box(width: 1fr, repeat[.])
     " "
-    b
+    if bold {
+      strong(b)
+    } else {
+      b
+    }
     linebreak()
   }
 }
