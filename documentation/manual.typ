@@ -7,7 +7,7 @@
   // subtitle: [An unofficial template for FHICT document generation.],
   authors: "TomVer99",
   url: "https://github.com/TomVer99/Typst-checklist-template",
-  version: "0.1.1",
+  version: "0.2.0",
   date: datetime.today(),
   abstract: [
     This template allows you to easily create checklists in the style of aviation checklists.
@@ -40,18 +40,9 @@
 
 == Pre Requisites
 
-To use this template, to need to be able to compile typst documents.
+To use this template, you need to be able to render Typst documents.
 
 == Importing the template
-
-There are two ways to import the template.
-
-The first way is to download the template file and import it using the `#import` command with a relative path to the local file.
-
-```typst
-#import "./../aero-check.typ": *
-```
-The second way is to import the template from the Typst Universe. If you have a method to render Typst documents that supports the Typst Universe, you can import the template using the following command:
 
 ```typst
 #import "@preview/aero-check:0.1.1": *
@@ -148,6 +139,26 @@ Here is an example of a simple document:
 ]
 
 #pagebreak()
+<step>
+#command(
+  "step",
+  arg[a],
+  arg[b],
+  arg[bold],
+)[
+  #argument("a", types: "string")[
+    The right element of a step.
+  ]
+
+  #argument("b", types: "string")[
+    The left element of a step.
+  ]
+
+  #argument("bold", types: "bool", default: false)[
+    If the step gets printed in #strong("bold").
+  ]
+]
+
 <topic>
 #command(
   "small-caution",
