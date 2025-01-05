@@ -3,7 +3,7 @@
 ![GitHub release (with filter)](https://img.shields.io/github/v/release/TomVer99/Typst-checklist-template?style=flat-square)
 ![GitHub Repo stars](https://img.shields.io/github/stars/TomVer99/Typst-checklist-template?style=flat-square)
 
-![Maintenance](https://img.shields.io/maintenance/Yes/2024?style=flat-square)
+![Maintenance](https://img.shields.io/maintenance/Yes/2025?style=flat-square)
 
 This typst checklist template is a simple checklist template for typst. It has multiple styles that require no changes to the document to switch between.
 
