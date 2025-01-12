@@ -149,6 +149,7 @@
 #let checklist(
   title: none,
   disclaimer: none,
+  font: "Open Sans",
   style: 0,
   body,
 ) = {
@@ -180,7 +181,8 @@
       )
     ],
   )
-  set text(size: large-text-size, font: "Open Sans")
+
+  set text(size: large-text-size, font: font)
 
   style-state.update(style)
 
@@ -201,5 +203,4 @@
   }
 
   body
-
 }
