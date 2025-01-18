@@ -58,9 +58,11 @@
 #let topic(
   title,
   fill-clr: rgb("FFFFFF"),
+  stroke: 1pt,
+  outset: 4pt,
   body,
 ) = {
-  box(width: 100%, stroke: 1pt, outset: 4pt, fill: fill-clr)[
+  box(width: 100%, stroke: stroke, outset: outset, fill: fill-clr)[
     #v(5pt)
     #align(center)[#text(size: 20pt, upper(strong(title)))]
     #v(5pt)
@@ -73,11 +75,13 @@
 #let section(
   title,
   fill-clr: rgb("FFFFFF"),
+  stroke: 1pt,
+  outset: 4pt,
   body,
 ) = (
   context {
     if (title != none and title != "") {
-      box(width: 100%, stroke: 1pt, outset: 4pt, fill: fill-clr)[
+      box(width: 100%, stroke: stroke, outset: outset, fill: fill-clr)[
         #v(5pt)
         #align(center)[#upper(strong(title))]
         #v(5pt)
@@ -85,7 +89,7 @@
       linebreak()
       v(-(small-text-size))
       if (style-state.get() == 1) {
-        box(width: 1fr, stroke: 1pt, outset: 4pt)[
+        box(width: 1fr, stroke: stroke, outset: outset)[
           #v(5pt)
           #body
           #v(5pt)
@@ -152,6 +156,10 @@
   font: "Open Sans",
   disclaimer-fill: rgb("FF1100").lighten(40%),
   style: 0,
+  text-size: large-text-size,
+  title-stroke: 1pt,
+  disclaimer-stroke: 1pt,
+  outset: 4pt,
   body,
 ) = {
   set page(
@@ -183,12 +191,12 @@
     ],
   )
 
-  set text(size: large-text-size, font: font)
+  set text(size: text-size, font: font)
 
   style-state.update(style)
 
   if title != none {
-    box(width: 100%, stroke: 1pt, outset: 4pt, fill: rgb("FFFFFF"))[
+    box(width: 100%, stroke: title-stroke, outset: outset, fill: rgb("FFFFFF"))[
       #v(5pt)
       #align(center)[#text(size: 20pt, upper(strong(title)))]
       #v(5pt)
