@@ -154,6 +154,7 @@
   title: none,
   disclaimer: none,
   font: "Open Sans",
+  disclaimer-fill: rgb("FF1100").lighten(40%),
   style: 0,
   text-size: large-text-size,
   title-stroke: 1pt,
@@ -203,7 +204,7 @@
   }
 
   if disclaimer != none {
-    box(width: 100%, stroke: disclaimer-stroke, outset: outset, fill: rgb("FF1100").lighten(40%))[
+    box(width: 100%, stroke: 1pt, outset: 4pt, fill: disclaimer-fill)[
       #v(5pt)
       #align(center)[#text(size: 20pt, upper(strong(disclaimer)))]
       #v(5pt)
