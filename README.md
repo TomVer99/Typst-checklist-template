@@ -3,7 +3,7 @@
 ![GitHub release (with filter)](https://img.shields.io/github/v/release/TomVer99/Typst-checklist-template?style=flat-square)
 ![GitHub Repo stars](https://img.shields.io/github/stars/TomVer99/Typst-checklist-template?style=flat-square)
 
-![Maintenance](https://img.shields.io/maintenance/Yes/2024?style=flat-square)
+![Maintenance](https://img.shields.io/maintenance/Yes/2025?style=flat-square)
 
 This typst checklist template is a simple checklist template for typst. It has multiple styles that require no changes to the document to switch between.
 
@@ -26,11 +26,10 @@ The following options are available for this template:
 
 To get started with this Typst checklist template, follow these steps:
 
-1. **Clone or Download**: Start by cloning this repository to your local machine, or download the `template` ZIP from the latest release. If you choose to manually download the individual files, you will only need the `template` folder.
-2. **Install Typst**: I recommend to use VSCode with the [Typst LSP Extension](https://marketplace.visualstudio.com/items?itemName=nvarner.typst-lsp). You will also need a PDF viewer in VSCode if you want to view the document live.
-3. **Import the template**: Import the template into your own typst checklist.
-4. **Set the available options**: Set the available options in the template file to your liking.
-5. **Start writing**: Start writing your checklist.
+1. **Install Typst**: I recommend to use VSCode with [Tinymist Typst Extension](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist). You will also need a PDF viewer in VSCode if you want to view the document live.
+2. **Import the template**: Import the template into your own typst checklist. `#import "@preview/aero-check:0.2.0:*`
+3. **Set the available options**: Set the available options in the template file to your liking.
+4. **Start writing**: Start writing your checklist.
 
 ## Helpful Links / Resources
 
