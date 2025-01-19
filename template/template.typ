@@ -172,30 +172,30 @@
   style-state.update(style)
 
   if enable-cover-page {
-  set page(
-    "a4",
-    margin: 0.4in,
-    background: [
-      #grid(
-        columns: 90%,
-        rows: (1fr, 2fr, 1fr, 1fr, 1fr, 1fr),
-        gutter: 0.1in,
+    set page(
+      "a4",
+      margin: 0.4in,
+      background: [
+        #grid(
+          columns: 90%,
+          rows: (1fr, 2fr, 1fr, 1fr, 1fr, 1fr),
+          gutter: 0.1in,
           [#text(size: 2em)[#org-name]],
-        [
+          [
             #if cover-image != none {
               image(cover-image, width: 6in, height: 3in)
-          }
-        ],
-        [#text(size: 2em)[#title]],
+            }
+          ],
+          [#text(size: 2em)[#title]],
           [#top-statement],
           [#bottom-statement],
-        [#rev
+          [#rev
             #if rev != none and doc-nr != none { [#linebreak()] }
             #doc-nr],
-      )
-    ],
-  )
-  pagebreak()
+        )
+      ],
+    )
+    pagebreak()
   }
 
   page(
