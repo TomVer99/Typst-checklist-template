@@ -65,7 +65,6 @@
   box(width: 100%, stroke: stroke, outset: outset, fill: fill-clr)[
     #v(5pt)
     #align(center)[#text(size: 20pt, upper(strong(title)))]
-    #text(size: 0pt)[= #title]
     #v(5pt)
   ]
   columns(2)[
@@ -152,64 +151,27 @@
 )
 
 #let checklist(
-  // Doc wide elements
   title: none,
-  rev: none,
-  doc-nr: none,
-  // Cover page elements
-  org-name: none,
-  cover-image: none,
-  top-statement: none,
-  bottom-statement: none,
-  enable-cover-page: false,
-  // General
-  font: "New Computer Modern",
-  text-size: large-text-size,
+  disclaimer: none,
+  font: "Open Sans",
+  disclaimer-fill: rgb("FF1100").lighten(40%),
   style: 0,
+  text-size: large-text-size,
+  title-stroke: 1pt,
+  disclaimer-stroke: 1pt,
+  outset: 4pt,
   body,
 ) = {
-  set text(size: text-size, font: font)
-  style-state.update(style)
-
-  if enable-cover-page {
-    set page(
-      "a4",
-      margin: 0.4in,
-      background: [
-        #grid(
-          columns: 90%,
-          rows: (1fr, 2fr, 1fr, 1fr, 1fr, 1fr),
-          gutter: 0.1in,
-          [#text(size: 2em)[#org-name]],
-          [
-            #if cover-image != none {
-              image(cover-image, width: 6in, height: 3in)
-            }
-          ],
-          [#text(size: 2em)[#title]],
-          [#top-statement],
-          [#bottom-statement],
-          [#rev
-            #if rev != none and doc-nr != none { [#linebreak()] }
-            #doc-nr],
-        )
-      ],
-    )
-    pagebreak()
-  }
-
-  page(
+  set page(
     "a4",
     margin: 0.4in,
-    background: [],
     footer: [
       #line(start: (0pt, -15pt), length: 100%)
       #place(
         left,
         dy: -10pt,
         text(size: 8pt, fill: rgb("000000"))[
-          #datetime.today().display()#linebreak()
-          #rev
+          #datetime.today().display()
         ],
       )
       #place(
@@ -223,12 +185,31 @@
         right,
         dy: -10pt,
         text(size: 8pt, fill: rgb("000000"))[
-          #title#linebreak()
-          #doc-nr
+          #title
         ],
       )
     ],
-  )[
-    #body
-  ]
+  )
+
+  set text(size: text-size, font: font)
+
+  style-state.update(style)
+
+  if title != none {
+    box(width: 100%, stroke: title-stroke, outset: outset, fill: rgb("FFFFFF"))[
+      #v(5pt)
+      #align(center)[#text(size: 20pt, upper(strong(title)))]
+      #v(5pt)
+    ]
+  }
+
+  if disclaimer != none {
+    box(width: 100%, stroke: 1pt, outset: 4pt, fill: disclaimer-fill)[
+      #v(5pt)
+      #align(center)[#text(size: 20pt, upper(strong(disclaimer)))]
+      #v(5pt)
+    ]
+  }
+
+  body
 }
